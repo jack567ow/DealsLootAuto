@@ -1,0 +1,127 @@
+{
+	"name": "LSI Bot",
+	"description": "Bot for Managing and converting affiliate links. with automation",
+	"keywords": ["Telegram"],
+	"repository": "https://github.com/droidspares/lsibot/",
+	"website": "https://t.me/aayushsharma",
+	"scripts": {
+		"worker": "npm start"
+	},
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		}
+	],
+	"env": {
+		"ADMIN_TG_ID": {
+			"description": "Your telegram ID.",
+			"value": "",
+			"required": true
+		},
+		"DEV_TG_ID": {
+			"description": "Developer's telegram ID.",
+			"value": "",
+			"required": true
+		},
+		"BOT_TOKEN": {
+			"description": "Your telegram bot token. Get it from https://t.me/BotFather",
+			"value": "",
+			"required": true
+		},
+		"AMAZON_TAG": {
+			"description": "Default Amazon Affiliate tag",
+			"value": "",
+			"required": true
+		},
+		"FLIPKART_TAG": {
+			"description": "Default Flipkart affiliate tag",
+			"value": "",
+			"required": true
+		},
+		"FK_AFFEXTPARAM1": {
+			"description": "Flipkart AFFEXTPARAM1. If do not want to use leave it blank.",
+			"value": "",
+			"required": false
+		},
+		"FK_AFFEXTPARAM2": {
+			"description": "Flipkart AFFEXTPARAM2. If do not want to use leave it blank.",
+			"value": "",
+			"required": false
+		},
+		"TG_CHANNEL_ID": {
+			"description": "Telegrra channel ID",
+			"value": "",
+			"required": true
+		},
+		"BITLY_API_KEY": {
+			"description": "Bitly API Key",
+			"value": "",
+			"required": true
+		},
+		"PARAMS_TO_REMOVE": {
+			"description": "Parameters to remove from the url. Separated by comma. Ex: utm_source,utm_medium,utm_campaign",
+			"value": "",
+			"required": false
+		},
+		"SEND_WITH_IMAGE": {
+			"description": "Keep it to true if you want to send message with image",
+			"value": "false",
+			"required": false
+		},
+		"REPLACE_KEYWORDS": {
+			"description": "Keywords to be replaced in msg. Separated by comma. Ex: amazon=AMAZON,flipkart=FLIPKART",
+			"value": "false",
+			"required": false
+		},
+		"TG_USER_APP_ID": {
+			"description": "telegram user client app api id,",
+			"value": "",
+			"required": false
+		},
+		"TG_USER_APP_HASH": {
+			"description": "telegram user client hash,",
+			"value": "",
+			"required": false
+		},
+		"TG_USER_SESSION_KEY": {
+			"description": "telegram user session key,",
+			"value": "",
+			"required": false
+		},
+		"TG_USER_PEER_ID": {
+			"description": "telegram user peer id. get it from http://telegram.dog/userinfobot",
+			"value": "",
+			"required": false
+		},
+		"SHOULD_USE_AFFID": {
+			"description": "put true if you want to use Affid, false if not,",
+			"value": "",
+			"required": false
+		},
+		"SHOULD_USE_EXTRAPE_FOR_FLIPKART": {
+			"description": "put true if you want to use extrape for flipkart, false if not,",
+			"value": "",
+			"required": false
+		},
+		"BOT_USERNAME": {
+			"description": "username of our bot with @. (for ex: @superDuperDealsBOT)",
+			"value": "",
+			"required": false
+		},
+		"FORWADING_FROM_OTHERS": {
+			"description": "put true if you want to turn on forwading from other channels else put false",
+			"value": "",
+			"required": false
+		}
+	},
+	"formation": {
+		"web": {
+			"quantity": 0
+		},
+		"worker": {
+			"quantity": 1,
+			"size": "free"
+		}
+	},
+	"addons": []
+}
