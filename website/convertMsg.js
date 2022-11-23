@@ -159,7 +159,7 @@ if (channel =='lootalert') {
                   let status = 'error';
                   const link = msg.match(/\bhttps?:\/\/\S+/gi);
                   await Promise.all(link.map(async (link, i) => {
-                        const extractedUrl = conLink(link, 'amazon');
+                        const extractedUrl = conLink3(link, 'amazon');
                           const finalUrl = await short(extractedUrl, 'amazon');
                           finalMsg = finalMsg.replace(link, finalUrl);
                           return status = 'ok'
