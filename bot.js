@@ -103,7 +103,7 @@ bot.command('dealsloot', async (ctx) => {
   ) {
   try {
     const message = ctx.message?.reply_to_message?.text || ctx.message?.reply_to_message?.caption || ctx.message?.text || ctx.message?.caption;
-    const data = await convertMsg(message.replace('/dealsloot', ''), 'dealsloot');
+    const data = await convertMsgs(message.replace('/dealsloot', ''), 'dealsloot');
     if (data?.status == 'ok') {
       if (ctx?.message?.photo && cfg?.SEND_WITH_IMAGE) {
         ctx.replyWithPhoto(ctx.message.photo[0].file_id, { caption: data.finalMsg, reply_to_message_id: ctx.message.message_id, disable_web_page_preview: true });
@@ -134,7 +134,7 @@ bot.command('lootalert', async (ctx) => {
   ) {
   try {
     const message = ctx.message?.reply_to_message?.text || ctx.message?.reply_to_message?.caption || ctx.message?.text || ctx.message?.caption;
-    const data = await convertMsg(message.replace('/lootalert', ''), 'lootalert');
+    const data = await convertMsgs(message.replace('/lootalert', ''), 'lootalert');
     if (data?.status == 'ok') {
       if ((ctx.message?.photo || ctx.message?.reply_to_message?.photo) && cfg?.SEND_WITH_IMAGE) {
         ctx.replyWithPhoto((ctx.message?.reply_to_message?.photo[0]?.file_id || ctx.message?.photo[0]?.file_id), { caption: data?.finalMsg, reply_to_message_id: ctx.message.message_id, disable_web_page_preview: true });
