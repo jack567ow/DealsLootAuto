@@ -1,11 +1,15 @@
 {
 	"name": "bot",
 	"version": "1.0.0",
+	"engines": {
+		"node": "16.8.0"
+	},
 	"description": "",
-	"main": "index.js",
+	"main": "bot.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node bot.js"
+		"heroku-postbuild": "npm i forever",
+		"start": "forever --spinSleepTime 5000 bot.js",
+		"dev": "nodemon bot.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -17,6 +21,7 @@
 		"cheerio": "^1.0.0-rc.12",
 		"dotenv": "^10.0.0",
 		"emoji-regex": "^10.2.1",
+		"forever": "^4.0.3",
 		"grammy": "^1.12.0",
 		"nodemon": "^2.0.20",
 		"telegram": "^2.13.6"
